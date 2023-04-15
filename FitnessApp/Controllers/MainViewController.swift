@@ -9,7 +9,14 @@ import UIKit
 
 class MainViewController: UIViewController {
 
-    var stackView = UIStackView()
+    private let userPhotoImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.backgroundColor = #colorLiteral(red: 0.8044065833, green: 0.8044064641, blue: 0.8044064641, alpha: 1)
+        imageView.layer.borderWidth = 5
+        imageView.layer.borderColor = UIColor.white.cgColor
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()

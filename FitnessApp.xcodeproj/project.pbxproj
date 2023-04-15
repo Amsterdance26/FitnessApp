@@ -13,6 +13,7 @@
 		004DF30929EAB58F00D34DDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 004DF30829EAB58F00D34DDE /* Assets.xcassets */; };
 		004DF30C29EAB58F00D34DDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 004DF30A29EAB58F00D34DDE /* LaunchScreen.storyboard */; };
 		004DF31F29EACCB500D34DDE /* UIFont + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004DF31E29EACCB500D34DDE /* UIFont + Extensions.swift */; };
+		004DF32129EACDDF00D34DDE /* UIColor + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004DF32029EACDDF00D34DDE /* UIColor + Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		004DF30B29EAB58F00D34DDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		004DF30D29EAB58F00D34DDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		004DF31E29EACCB500D34DDE /* UIFont + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extensions.swift"; sourceTree = "<group>"; };
+		004DF32029EACDDF00D34DDE /* UIColor + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				004DF31E29EACCB500D34DDE /* UIFont + Extensions.swift */,
+				004DF32029EACDDF00D34DDE /* UIColor + Extensions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				004DF30429EAB58E00D34DDE /* ViewController.swift in Sources */,
+				004DF32129EACDDF00D34DDE /* UIColor + Extensions.swift in Sources */,
 				004DF31F29EACCB500D34DDE /* UIFont + Extensions.swift in Sources */,
 				004DF30029EAB58E00D34DDE /* AppDelegate.swift in Sources */,
 				004DF30229EAB58E00D34DDE /* SceneDelegate.swift in Sources */,

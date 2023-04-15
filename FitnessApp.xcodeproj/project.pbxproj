@@ -54,6 +54,7 @@
 		004DF2FE29EAB58E00D34DDE /* FitnessApp */ = {
 			isa = PBXGroup;
 			children = (
+				004DF31929EAC5E600D34DDE /* Views */,
 				004DF31629EAC4E900D34DDE /* Application */,
 				004DF31729EAC50200D34DDE /* Controllers */,
 				004DF31829EAC54000D34DDE /* Models */,
@@ -86,6 +87,13 @@
 			children = (
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		004DF31929EAC5E600D34DDE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -60,9 +60,6 @@
 				004DF31829EAC54000D34DDE /* Models */,
 				004DF31A29EAC94600D34DDE /* Extentions */,
 				004DF31C29EAC9E000D34DDE /* Resources */,
-				004DF30829EAB58F00D34DDE /* Assets.xcassets */,
-				004DF30A29EAB58F00D34DDE /* LaunchScreen.storyboard */,
-				004DF30D29EAB58F00D34DDE /* Info.plist */,
 			);
 			path = FitnessApp;
 			sourceTree = "<group>";
@@ -116,6 +113,9 @@
 		004DF31C29EAC9E000D34DDE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				004DF30829EAB58F00D34DDE /* Assets.xcassets */,
+				004DF30A29EAB58F00D34DDE /* LaunchScreen.storyboard */,
+				004DF30D29EAB58F00D34DDE /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -333,7 +333,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 98Z2UWS5M6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FitnessApp/Info.plist;
+				INFOPLIST_FILE = FitnessApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -360,7 +360,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 98Z2UWS5M6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FitnessApp/Info.plist;
+				INFOPLIST_FILE = FitnessApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

@@ -38,8 +38,15 @@ class MainViewController: UIViewController {
     }()
 
     private let addWorkoutButton: UIButton = {
-        let button = UIButton()
+        let button = UIButton(type: .system)
         button.backgroundColor = .specialYellow
+        button.layer.cornerRadius = 10
+        button.setTitle("Add workout", for: .normal)
+        button.titleLabel?.font = .robotoMedium12()
+        button.tintColor = .specialDarkGreen
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 15, right: 0)
+        button.titleEdgeInsets = UIEdgeInsets(top: 50, left: -40, bottom: 0, right: 0)
+        button.setImage(UIImage(named: "addWorkout"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -60,6 +67,7 @@ class MainViewController: UIViewController {
         view.addSubview(calendarView)
         view.addSubview(userPhotoImageView)
         view.addSubview(userNameLabel)
+        view.addSubview(addWorkoutButton)
     }
 }
 
@@ -83,6 +91,13 @@ extension MainViewController {
             userNameLabel.leadingAnchor.constraint(equalTo: userPhotoImageView.trailingAnchor, constant: 5),
             userNameLabel.bottomAnchor.constraint(equalTo: calendarView.topAnchor, constant: -10),
             userNameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+        ])
+
+        NSLayoutConstraint.activate([
+            addWorkoutButton.topAnchor.constraint(equalTo: calendarView.bottomAnchor, constant: 5),
+            addWorkoutButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            addWorkoutButton.heightAnchor.constraint(equalToConstant: 80),
+            addWorkoutButton.widthAnchor.constraint(equalToConstant: 80)
         ])
     }
 }

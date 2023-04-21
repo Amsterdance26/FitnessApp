@@ -47,11 +47,7 @@ class MainViewController: UIViewController {
         button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 15, right: 0)
         button.titleEdgeInsets = UIEdgeInsets(top: 50, left: -40, bottom: 0, right: 0)
         button.setImage(UIImage(named: "addWorkout"), for: .normal)
-        button.layer.shadowColor = UIColor.gray.cgColor
-        button.layer.masksToBounds = false
-        button.layer.shadowOffset = CGSize(width: 0.0 , height: 3.0)
-        button.layer.shadowOpacity = 0.7
-        button.layer.shadowRadius = 1.0
+        button.addShadowOnView()
         button.addTarget(self, action: #selector(addWorkoutButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button

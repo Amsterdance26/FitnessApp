@@ -47,6 +47,7 @@ class MainViewController: UIViewController {
         button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 15, right: 0)
         button.titleEdgeInsets = UIEdgeInsets(top: 50, left: -40, bottom: 0, right: 0)
         button.setImage(UIImage(named: "addWorkout"), for: .normal)
+        button.addTarget(self, action: #selector(addWorkoutButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -68,6 +69,10 @@ class MainViewController: UIViewController {
         view.addSubview(userPhotoImageView)
         view.addSubview(userNameLabel)
         view.addSubview(addWorkoutButton)
+    }
+
+    @objc private func addWorkoutButtonTapped() {
+        print("addWorkoutButtonTapped")
     }
 }
 

@@ -24,7 +24,7 @@ class CalendarView: UIView {
         setupViews()
         setConstraints()
         setDelegates()
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: idCalendarCell)
+        collectionView.register(CalendarCollectionViewCell.self, forCellWithReuseIdentifier: idCalendarCell)
 
     }
 
@@ -55,7 +55,7 @@ extension CalendarView: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: idCalendarCell, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: idCalendarCell, for: indexPath) as! CalendarCollectionViewCell
         return cell
     }
 }

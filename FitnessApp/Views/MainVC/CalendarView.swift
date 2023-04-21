@@ -37,14 +37,14 @@ class CalendarView: UIView {
         backgroundColor = .specialGreen
         layer.cornerRadius = 10
         translatesAutoresizingMaskIntoConstraints = false
+        addSubview(collectionView)
     }
 
     private func setDelegates() {
-        //collectionView.delegate = self
+        collectionView.delegate = self
         collectionView.dataSource = self
 
     }
-
 }
 
 // MARK: - UICollectionViewDataSource

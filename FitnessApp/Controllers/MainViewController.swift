@@ -18,13 +18,13 @@ class MainViewController: UIViewController {
         return imageView
     }()
 
-    private let calendarView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .specialGreen
-        view.layer.cornerRadius = 10
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
+//    private let calendarView: UIView = {
+//        let view = UIView()
+//        view.backgroundColor = .specialGreen
+//        view.layer.cornerRadius = 10
+//        view.translatesAutoresizingMaskIntoConstraints = false
+//        return view
+//    }()
 
     private let userNameLabel: UILabel = {
         let label = UILabel()
@@ -52,6 +52,9 @@ class MainViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+
+    private let calendarView = CalendarView()
+
 
     override func viewDidLayoutSubviews() {
         userPhotoImageView.layer.cornerRadius  = userPhotoImageView.frame.width / 2

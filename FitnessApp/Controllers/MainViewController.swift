@@ -57,8 +57,10 @@ class MainViewController: UIViewController {
 
     private let tableView: UITableView = {
         let tableView = UITableView()
-        tableView.backgroundColor = .red
+        tableView.backgroundColor = .none
         tableView.separatorStyle = .none
+        tableView.bounces = false
+        tableView.showsVerticalScrollIndicator = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
 
         return tableView
@@ -79,7 +81,7 @@ class MainViewController: UIViewController {
         setupViews()
         setConstraints()
         setDelegate()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: idWorkoutTabeleViewCell)
+        tableView.register(WorkoutTableViewCell.self, forCellReuseIdentifier: idWorkoutTabeleViewCell)
     }
 
     private func setDelegate() {
@@ -110,7 +112,7 @@ extension MainViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: idWorkoutTabeleViewCell, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: idWorkoutTabeleViewCell, for: indexPath) as! WorkoutTableViewCell
 
         return cell
     }
@@ -167,8 +169,8 @@ extension MainViewController {
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: workOutTodayLabel.bottomAnchor, constant: 0),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0), // fixed line
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)  // fixed line
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
         ])
 
     }

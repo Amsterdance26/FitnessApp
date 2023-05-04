@@ -18,13 +18,6 @@ class MainViewController: UIViewController {
         return imageView
     }()
 
-//    private let calendarView: UIView = {
-//        let view = UIView()
-//        view.backgroundColor = .specialGreen
-//        view.layer.cornerRadius = 10
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        return view
-//    }()
 
     private let userNameLabel: UILabel = {
         let label = UILabel()
@@ -48,13 +41,33 @@ class MainViewController: UIViewController {
         button.titleEdgeInsets = UIEdgeInsets(top: 50, left: -40, bottom: 0, right: 0)
         button.setImage(UIImage(named: "addWorkout"), for: .normal)
         button.addShadowOnView()
-        button.addTarget(self, action: #selector(addWorkoutButtonTapped), for: .touchUpInside)
+        button.addTarget(MainViewController.self, action: #selector(addWorkoutButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
 
+    private let workOutTodayLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Workout today"
+        label.textColor = .specialLightBrown
+        label.font = .robotoMedium14()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
+    private let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.backgroundColor = .red
+        tableView.separatorStyle = .none
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+
+        return tableView
+    }()
+
+
     private let calendarView = CalendarView()
 
+    private let idWorkoutTabeleViewCell = "idWorkoutTabeleViewCell"
 
     override func viewDidLayoutSubviews() {
         userPhotoImageView.layer.cornerRadius  = userPhotoImageView.frame.width / 2
@@ -65,21 +78,53 @@ class MainViewController: UIViewController {
 
         setupViews()
         setConstraints()
+        setDelegate()
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: idWorkoutTabeleViewCell)
+    }
+
+    private func setDelegate() {
+        tableView.delegate = self
+        tableView.dataSource = self
     }
 
     private func setupViews() {
         view.backgroundColor = .specialBackground
+
         view.addSubview(calendarView)
         view.addSubview(userPhotoImageView)
         view.addSubview(userNameLabel)
         view.addSubview(addWorkoutButton)
+        view.addSubview(workOutTodayLabel)
+        view.addSubview(tableView)
     }
 
     @objc private func addWorkoutButtonTapped() {
         print("addWorkoutButtonTapped")
     }
 }
+// MARK: - UITableViewDataSource
 
+extension MainViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        10
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: idWorkoutTabeleViewCell, for: indexPath)
+
+        return cell
+    }
+}
+
+// MARK: - UITableViewDelegate
+
+extension MainViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        100
+    }
+}
+
+// MARK: - Set constraints
 extension MainViewController {
     private func setConstraints() {
         NSLayoutConstraint.activate([
@@ -108,6 +153,24 @@ extension MainViewController {
             addWorkoutButton.heightAnchor.constraint(equalToConstant: 80),
             addWorkoutButton.widthAnchor.constraint(equalToConstant: 80)
         ])
+
+        NSLayoutConstraint.activate([
+            workOutTodayLabel.topAnchor.constraint(equalTo: addWorkoutButton.bottomAnchor, constant: 10),
+            workOutTodayLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10)
+        ])
+
+        NSLayoutConstraint.activate([
+            workOutTodayLabel.topAnchor.constraint(equalTo: addWorkoutButton.bottomAnchor, constant: 10),
+            workOutTodayLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10)
+        ])
+
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: workOutTodayLabel.bottomAnchor, constant: 0),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0), // fixed line
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)  // fixed line
+        ])
+
     }
 }
 

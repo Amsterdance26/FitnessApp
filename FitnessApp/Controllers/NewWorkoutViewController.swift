@@ -36,7 +36,7 @@ class NewWorkoutViewController: UIViewController {
 //        return label
 //    }()
 
-    private let nameLabel = UILabel(text: "Name")
+    private let nameLabel = UILabel()
 
     private let nameTextField: UITextField = {
         let textField = UITextField()

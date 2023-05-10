@@ -77,7 +77,7 @@ class MainViewController: UIViewController {
         imageView.image = UIImage(named: "noWorkout")
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
-//        imageView.isHidden = true
+        imageView.isHidden = false
         return imageView
     }()
 
